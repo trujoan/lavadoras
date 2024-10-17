@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PQR - Solicitud de Mantenimiento</title>
+    <link rel="stylesheet" href="css/pqr.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="left-menu">
+                <li>
+                    <a href="#" class="dropdown">Menu</a>
+                    <ul class="dropdown-content">
+                        <li><a href="ofertas.html">Ofertas</a></li>
+                        <li><a href="pqr.html">PQR</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <h1>LavaFix_co</h1>
+            <ul class="right-menu">
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>PQR - Solicitud de Mantenimiento</h2>
+        
+        <section class="form-section">
+            <h3>Solicitud de Mantenimiento</h3>
+            <form id="maintenance-request">
+                <label for="device">Selecciona el dispositivo:</label>
+                <select id="device" required>
+                    <option value="lavadora">Lavadora</option>
+                    <option value="secadora">Secadora</option>
+                </select>
+                
+                <label for="description">Descripción del problema:</label>
+                <textarea id="description" rows="4" required></textarea>
+                
+                <button type="submit">Enviar Solicitud</button>
+            </form>
+        </section>
+
+        <section class="form-section">
+            <h3>Generar Reclamos o PQRS</h3>
+            <form id="pqr-request">
+                <label for="pqr-type">Tipo de PQR:</label>
+                <select id="pqr-type" required>
+                    <option value="reclamo">Reclamo</option>
+                    <option value="sugerencia">Sugerencia</option>
+                </select>
+                
+                <label for="pqr-description">Descripción:</label>
+                <textarea id="pqr-description" rows="4" required></textarea>
+                
+                <button type="submit">Enviar PQR</button>
+            </form>
+        </section>
+
+        <section class="tracking-section">
+            <h3>Seguimiento de PQR</h3>
+            <label for="tracking-id">Ingresa tu ID de seguimiento:</label>
+            <input type="text" id="tracking-id" required>
+            <button id="track-button">Consultar Estado</button>
+            <div id="tracking-result"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tiendas de Electrodomésticos. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/pqr.js"></script>
+</body>
+</html>

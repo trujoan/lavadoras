@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f0f4f8;
+}
+
+header {
+    background-color: #082745;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.left-menu, .right-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.left-menu li {
+    position: relative;
+}
+
+.left-menu .dropdown {
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.left-menu .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #00688d;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.left-menu li:hover .dropdown-content {
+    display: block;
+}
+
+.left-menu .dropdown-content a {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    padding: 8px 16px;
+}
+
+.right-menu li {
+    margin: 0 15px;
+}
+
+.right-menu a {
+    color: #fdfeff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+.form-section {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-section h3 {
+    color: #0033a0;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.tracking-section {
+    margin-top: 20px;
+}

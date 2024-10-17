@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasarela de Pago - LavaFix_co</title>
+    <link rel="stylesheet" href="css/pago.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="logout.html">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Pasarela de Pago</h2>
+        <form id="payment-form">
+            <div class="input-group">
+                <label for="card-number">Número de Tarjeta:</label>
+                <input type="text" id="card-number" required>
+            </div>
+            <div class="input-group">
+                <label for="card-expiration">Fecha de Expiración:</label>
+                <input type="text" id="card-expiration" placeholder="MM/AA" required>
+            </div>
+            <div class="input-group">
+                <label for="card-cvc">CVC:</label>
+                <input type="text" id="card-cvc" required>
+            </div>
+            <div class="input-group">
+                <label for="amount">Monto a Pagar:</label>
+                <input type="number" id="amount" required>
+            </div>
+            <button type="submit">Realizar Pago</button>
+            <p id="error-message"></p>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 LavaFix_co. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/pago.js"></script>
+</body>
+</html>

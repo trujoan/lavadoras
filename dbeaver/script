@@ -1,0 +1,101 @@
+
+-- Crear base de datos
+CREATE DATABASE LavaFix;
+
+-- Usar la base de datos
+USE LavaFix;
+
+-- Tabla para usuarios
+CREATE TABLE Users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,  -- ID único del usuario, se incrementa automáticamente
+    first_name VARCHAR(50),                   -- Primer nombre del usuario, hasta 50 caracteres
+    last_name VARCHAR(50),                    -- Apellido del usuario, hasta 50 caracteres
+    username VARCHAR(50) NOT NULL UNIQUE,     -- Nombre de usuario, debe ser único y no puede ser nulo
+    email VARCHAR(100) NOT NULL UNIQUE,       -- Correo electrónico del usuario, único y no puede ser nulo
+    password VARCHAR(255) NOT NULL,           -- Contraseña del usuario, no puede ser nula
+    role ENUM('admin', 'employee', 'customer') NOT NULL,  -- Rol del usuario (admin, employee, customer)
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP  -- Fecha y hora de creación del registro
+);
+
+-- Tabla para órdenes de compra
+CREATE TABLE Orders (
+    order_id INT AUTO_INCREMENT PRIMARY KEY,   -- ID único de la orden, se incrementa automáticamente
+    user_id INT NOT NULL,                      -- ID del usuario que realizó la orden, no puede ser nulo
+    order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- Fecha y hora de creación de la orden
+    order_details TEXT,                        -- Detalles de la orden (productos, cantidades, etc.)
+    status VARCHAR(20),                        -- Estado de la orden (pendiente, completada, etc.)
+    FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE  -- Relación con la tabla Users
+);
+
+-- Tabla para pagos
+CREATE TABLE Payments (
+    payment_id INT AUTO_INCREMENT PRIMARY KEY, -- ID único del pago, se incrementa automáticamente
+    order_id INT NOT NULL,                     -- ID de la orden asociada, no puede ser nulo
+    amount DECIMAL(10, 2) NOT NULL,           -- Monto del pago, hasta 10 dígitos y 2 decimales
+    payment_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- Fecha y hora del pago
+    status ENUM('Pendiente', 'Completado', 'Fallido') NOT NULL,  -- Estado del pago
+    FOREIGN KEY (order_id) REFERENCES Orders(order_id) ON DELETE CASCADE  -- Relación con la tabla Orders
+);
+
+-- Tabla para registro de cambios
+CREATE TABLE ChangeLog (
+    change_id INT AUTO_INCREMENT PRIMARY KEY,  -- ID único del cambio, se incrementa automáticamente
+    user_id INT NOT NULL,                      -- ID del usuario que realizó el cambio, no puede ser nulo
+    change_description TEXT,                   -- Descripción del cambio realizado
+    change_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- Fecha y hora del cambio
+    FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE  -- Relación con la tabla Users
+);
+
+-- Tabla para servicios
+CREATE TABLE Services (
+    service_id INT AUTO_INCREMENT PRIMARY KEY, -- ID único del servicio, se incrementa automáticamente
+    user_id INT NOT NULL,                      -- ID del usuario que solicitó el servicio, no puede ser nulo
+    service_type VARCHAR(50),                  -- Tipo de servicio solicitado
+    request_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- Fecha y hora de la solicitud
+    status VARCHAR(20),                        -- Estado del servicio (pendiente, completado, etc.)
+    FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE  -- Relación con la tabla Users
+);
+
+-- Tabla para historial de compras y servicios
+CREATE TABLE PurchaseHistory (
+    history_id INT AUTO_INCREMENT PRIMARY KEY,  -- ID único del historial, se incrementa automáticamente
+    user_id INT NOT NULL,                       -- ID del usuario, no puede ser nulo
+    order_id INT,                               -- ID de la orden, si aplica
+    service_id INT,                            -- ID del servicio, si aplica
+    action_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- Fecha y hora de la acción registrada
+    FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE,  -- Relación con la tabla Users
+    FOREIGN KEY (order_id) REFERENCES Orders(order_id) ON DELETE CASCADE,  -- Relación con la tabla Orders
+    FOREIGN KEY (service_id) REFERENCES Services(service_id) ON DELETE CASCADE  -- Relación con la tabla Services
+);
+
+-- Tabla para actualizaciones de consultas
+CREATE TABLE ServiceUpdates (
+    update_id INT AUTO_INCREMENT PRIMARY KEY,   -- ID único de la actualización, se incrementa automáticamente
+    service_id INT NOT NULL,                    -- ID del servicio asociado, no puede ser nulo
+    status VARCHAR(20),                         -- Estado de la actualización
+    comment TEXT,                               -- Comentario adicional sobre la actualización
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- Fecha y hora de la actualización
+    FOREIGN KEY (service_id) REFERENCES Services(service_id) ON DELETE CASCADE  -- Relación con la tabla Services
+);
+
+-- Tabla para solicitudes de mantenimiento
+CREATE TABLE MaintenanceRequests (
+    request_id INT AUTO_INCREMENT PRIMARY KEY,   -- ID único de la solicitud, se incrementa automáticamente
+    user_id INT NOT NULL,                        -- ID del usuario que realiza la solicitud, no puede ser nulo
+    device VARCHAR(50) NOT NULL,                -- Dispositivo que requiere mantenimiento
+    description TEXT NOT NULL,                   -- Descripción del problema
+    request_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- Fecha y hora de la solicitud
+    status VARCHAR(20) DEFAULT 'Pendiente',      -- Estado de la solicitud, por defecto 'Pendiente'
+    FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE  -- Relación con la tabla Users
+);
+
+-- Tabla para PQRs
+CREATE TABLE PQRs (
+    pqr_id INT AUTO_INCREMENT PRIMARY KEY,       -- ID único del PQR, se incrementa automáticamente
+    user_id INT NOT NULL,                        -- ID del usuario que realiza el PQR, no puede ser nulo
+    pqr_type ENUM('reclamo', 'sugerencia') NOT NULL,  -- Tipo de PQR (reclamo o sugerencia)
+    description TEXT NOT NULL,                   -- Descripción del PQR
+    request_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- Fecha y hora de la solicitud
+    status VARCHAR(20) DEFAULT 'Pendiente',      -- Estado del PQR, por defecto 'Pendiente'
+    FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE  -- Relación con la tabla Users
+);
