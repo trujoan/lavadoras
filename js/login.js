@@ -23,25 +23,47 @@ document.getElementById('login-link').addEventListener('click', function(event) 
 // Inicialmente ocultar el formulario de registro
 document.querySelector('.register-container').classList.add('hidden');
 
-document.getElementById('register-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+// Manejar el envío del formulario de registro
+document.getElementById('register-form').addEventListener('submit', async function(event) {
+    event.preventDefault(); // Evitar el envío del formulario por defecto
 
-    const firstName = document.getElementById('first-name').value;
-    const lastName = document.getElementById('last-name').value;
-    const username = document.getElementById('new-username').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('new-password').value;
-    const confirmPassword = document.getElementById('confirm-password').value;
-    const errorMessage = document.getElementById('error-message-register');
+    const formData = new FormData(this); // Obtener los datos del formulario
 
-    if (firstName === '' || lastName === '' || username === '' || email === '' || password === '' || confirmPassword === '') {
-        errorMessage.textContent = 'Por favor, completa todos los campos';
-        errorMessage.style.display = 'block';
-    } else if (password !== confirmPassword) {
-        errorMessage.textContent = 'Las contraseñas no coinciden';
-        errorMessage.style.display = 'block';
-    } else {
-        errorMessage.style.display = 'none';
+    try {
+        const response = await fetch('php/registrarUsuario.php', {
+            method: 'POST',
+            body: formData
+        });
+
+        const result = await response.text(); // Obtener la respuesta del servidor
+        console.log(result); // Mostrar la respuesta en la consola
+
+        // Puedes agregar más lógica aquí para manejar la respuesta
         alert('Registro exitoso');
+    } catch (error) {
+        console.error('Error en la solicitud:', error);
+        alert('Error al registrar. Por favor, intenta de nuevo.');
+    }
+});
+
+// Manejar el envío del formulario de inicio de sesión
+document.getElementById('login-form').addEventListener('submit', async function(event) {
+    event.preventDefault(); // Evitar el envío del formulario por defecto
+
+    const formData = new FormData(this); // Obtener los datos del formulario
+
+    try {
+        const response = await fetch('php/validarUsuario.php', {
+            method: 'POST',
+            body: formData
+        });
+
+        const result = await response.text(); // Obtener la respuesta del servidor
+        console.log(result); // Mostrar la respuesta en la consola
+
+        // Aquí puedes agregar lógica para redirigir según la respuesta
+    } catch (error) {
+        console.error('Error en la solicitud:', error);
+        alert('Error al iniciar sesión. Por favor, intenta de nuevo.');
     }
 });
