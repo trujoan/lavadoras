@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="css/login.css">
+    <title>Registro</title>
+    <link rel="stylesheet" href="css/register.css">
 </head>
 <body>
     <header>
@@ -15,29 +15,8 @@
         </nav>
     </header>
     <div class="container" id="container">
-        <div class="form-container login-container">
-            <h2>Iniciar Sesión</h2>
-            <form id="login-form" action="php/validarUsuario.php" method="post">
-                <div class="input-group">
-                    <label for="username">Usuario</label>
-                    <input type="text" id="username" name="username" required>
-                </div>
-                <div class="input-group">
-                    <label for="password">Contraseña</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <div class="register-link">
-                    <a href="#" id="register-link">¿No tienes una cuenta? Regístrate</a>
-                </div>
-                <button type="submit">Entrar</button>
-                <p id="error-message"></p>
-            </form>
-        </div>
-
-        <div class="logo" id="logo">
-            <img src="img/LOGO.jpeg" alt="Logo de la Empresa">
-        </div>
-
+        
+        <!-- Formulario de Registro -->
         <div class="form-container register-container">
             <h2>Registrarse</h2>
             <form id="register-form" action="php/registrarUsuario.php" method="post">
@@ -66,14 +45,17 @@
                     <input type="password" id="confirm-password" name="confirm-password" required>
                 </div>
                 <div class="login-link">
-                    <a href="#" id="login-link">¿Ya tienes una cuenta? Inicia sesión</a>
+                    <a href="login.html" id="login-link">¿Ya tienes una cuenta? Inicia sesión</a>
                 </div>
                 <input type="submit" value="Registrarse">
                 <p id="error-message-register"></p>
             </form>
         </div>
+
+        <div class="logo" id="logo">
+            <img src="img/LOGO.jpeg" alt="Logo de la Empresa">
+        </div>
     </div>
 
-    <!-- <script src="js/login.js" defer></script> >
 </body>
 </html>

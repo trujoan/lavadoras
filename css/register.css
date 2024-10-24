@@ -1,4 +1,4 @@
-body { 
+body {
     font-family: Arial, sans-serif;
     background-color: #005d7e;
     margin: 0; /* Eliminar márgenes del body */
@@ -53,17 +53,11 @@ nav a:hover {
     flex-direction: column;
     justify-content: flex-start;
     overflow: auto;
-    transition: transform 0.2s ease-in-out;
     z-index: 1;
 }
 
-.login-container {
-    left: 0;
-}
-
 .register-container {
-    right: 0;
-    transform: translateX(100%);
+    left: 0;
 }
 
 .logo {
@@ -76,21 +70,13 @@ nav a:hover {
     align-items: center;
     background-color: #c6f0ec;
     transition: transform 0.2s ease-in-out;
-    z-index: 2;
+    z-index: 2; /* La imagen está en la parte superior */
 }
 
 .logo img {
     max-width: 80%;
     max-height: 80%;
     object-fit: contain;
-}
-
-.container.show-register .logo {
-    transform: translateX(-100%);
-}
-
-.container.show-register .register-container {
-    transform: translateX(0);
 }
 
 .form-container h2 {
@@ -118,21 +104,6 @@ nav a:hover {
     font-size: 14px;
 }
 
-.register-link, .login-link {
-    margin-bottom: 15px;
-    text-align: right;
-}
-
-.register-link a, .login-link a {
-    font-size: 14px;
-    color: #007bff;
-    text-decoration: none;
-}
-
-.register-link a:hover, .login-link a:hover {
-    text-decoration: underline;
-}
-
 button {
     width: 100%;
     padding: 10px;
@@ -141,15 +112,10 @@ button {
     border: none;
     border-radius: 4px;
     font-size: 16px;
-    cursor: pointer;
 }
 
 button:hover {
     background-color: #0056b3;
-}
-
-.hidden {
-    display: none;
 }
 
 /* Media Queries para hacer el diseño responsive */
