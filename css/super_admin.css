@@ -32,8 +32,6 @@ section {
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(5, 1, 1, 0.1);
-    max-width: 600px; /*realizar cambios en las otras pestañas*/
-    margin: auto;
 }
 
 h2 {
