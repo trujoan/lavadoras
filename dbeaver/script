@@ -125,3 +125,96 @@ VALUES
 ('Paula', 'Ortiz', 'portiz', 'paula@correo.com', '12345678', '2'),
 ('Jose', 'Mendoza', 'jmendoza', 'jose@correo.com', '12345678', '3'),
 ('Valentina', 'Silva', 'vsilva', 'valentina@correo.com', '12345678', '1');
+
+INSERT INTO Orders (user_id, order_date, order_details, status)
+VALUES 
+(1, '2024-10-24 10:05:00', '2x Producto A, 1x Producto B', 'Completada'),
+(2, '2024-10-24 10:10:00', '1x Producto C', 'Pendiente'),
+(3, '2024-10-24 10:15:00', '3x Producto D', 'Completada'),
+(4, '2024-10-24 10:20:00', '1x Producto E, 2x Producto F', 'Pendiente'),
+(5, '2024-10-24 10:25:00', '1x Producto G', 'Completada'),
+(6, '2024-10-24 10:30:00', '2x Producto H', 'Pendiente'),
+(7, '2024-10-24 10:35:00', '1x Producto I', 'Completada'),
+(8, '2024-10-24 10:40:00', '1x Producto J, 1x Producto K', 'Pendiente'),
+(9, '2024-10-24 10:45:00', '1x Producto L', 'Completada'),
+(10, '2024-10-24 10:50:00', '2x Producto M', 'Pendiente');
+
+INSERT INTO ChangeLog (user_id, change_description, change_date)
+VALUES 
+(1, 'Actualización de detalles de cuenta', '2024-10-24 10:07:00'),
+(2, 'Cambio de contraseña', '2024-10-24 10:12:00'),
+(3, 'Actualización de dirección', '2024-10-24 10:17:00'),
+(4, 'Añadido nuevo método de pago', '2024-10-24 10:22:00'),
+(5, 'Actualización de perfil', '2024-10-24 10:27:00'),
+(6, 'Cambio en preferencias de notificación', '2024-10-24 10:32:00'),
+(7, 'Actualización de datos fiscales', '2024-10-24 10:37:00'),
+(8, 'Eliminación de cuenta', '2024-10-24 10:42:00'),
+(9, 'Actualización de información personal', '2024-10-24 10:47:00'),
+(10, 'Cambio en la configuración de la cuenta', '2024-10-24 10:52:00');
+
+INSERT INTO Services (user_id, service_type, request_date, status)
+VALUES 
+(1, 'Mantenimiento', '2024-10-24 10:08:00', 'Pendiente'),
+(2, 'Asesoría', '2024-10-24 10:13:00', 'Completado'),
+(3, 'Instalación', '2024-10-24 10:18:00', 'Pendiente'),
+(4, 'Reparación', '2024-10-24 10:23:00', 'Completado'),
+(5, 'Consulta', '2024-10-24 10:28:00', 'Pendiente'),
+(6, 'Soporte técnico', '2024-10-24 10:33:00', 'Completado'),
+(7, 'Mantenimiento', '2024-10-24 10:38:00', 'Pendiente'),
+(8, 'Instalación', '2024-10-24 10:43:00', 'Completado'),
+(9, 'Asesoría', '2024-10-24 10:48:00', 'Pendiente'),
+(10, 'Reparación', '2024-10-24 10:53:00', 'Completado');
+
+INSERT INTO PurchaseHistory (user_id, order_id, service_id, action_date)
+VALUES 
+(1, 1, NULL, '2024-10-24 10:09:00'),
+(2, 2, NULL, '2024-10-24 10:14:00'),
+(3, 3, NULL, '2024-10-24 10:19:00'),
+(4, 4, NULL, '2024-10-24 10:24:00'),
+(5, 5, NULL, '2024-10-24 10:29:00'),
+(6, 6, NULL, '2024-10-24 10:34:00'),
+(7, 7, NULL, '2024-10-24 10:39:00'),
+(8, 8, NULL, '2024-10-24 10:44:00'),
+(9, 9, NULL, '2024-10-24 10:49:00'),
+(10, 10, NULL, '2024-10-24 10:54:00');
+
+INSERT INTO ServiceUpdates (service_id, status, comment, updated_at)
+VALUES 
+(1, 'En Progreso', 'Se ha iniciado el mantenimiento.', '2024-10-24 10:11:00'),
+(2, 'Completado', 'Servicio finalizado con éxito.', '2024-10-24 10:16:00'),
+(3, 'En Progreso', 'Se están realizando las instalaciones.', '2024-10-24 10:21:00'),
+(4, 'Completado', 'Reparación realizada.', '2024-10-24 10:26:00'),
+(5, 'Pendiente', 'A la espera de confirmación.', '2024-10-24 10:31:00'),
+(6, 'Completado', 'Soporte brindado con éxito.', '2024-10-24 10:36:00'),
+(7, 'Pendiente', 'Mantenimiento programado.', '2024-10-24 10:41:00'),
+(8, 'Completado', 'Instalación realizada.', '2024-10-24 10:46:00'),
+(9, 'Pendiente', 'Asesoría agendada.', '2024-10-24 10:51:00'),
+(10, 'Completado', 'Reparación exitosa.', '2024-10-24 10:56:00');
+
+INSERT INTO MaintenanceRequests (user_id, device, description, request_date, status)
+VALUES 
+(1, 'Computadora', 'No enciende.', '2024-10-24 10:11:00', 'Pendiente'),
+(2, 'Impresora', 'Atasco de papel.', '2024-10-24 10:16:00', 'Pendiente'),
+(3, 'Router', 'Conexión inestable.', '2024-10-24 10:21:00', 'Pendiente'),
+(4, 'Teléfono', 'No carga.', '2024-10-24 10:26:00', 'Pendiente'),
+(5, 'Monitor', 'Pantalla rota.', '2024-10-24 10:31:00', 'Pendiente'),
+(6, 'Teclado', 'Falla en teclas.', '2024-10-24 10:36:00', 'Pendiente'),
+(7, 'Mouse', 'Conexión perdida.', '2024-10-24 10:41:00', 'Pendiente'),
+(8, 'Laptop', 'Calentamiento excesivo.', '2024-10-24 10:46:00', 'Pendiente'),
+(9, 'Tablet', 'Pantalla congelada.', '2024-10-24 10:51:00', 'Pendiente'),
+(10, 'Cámara', 'Foco dañado.', '2024-10-24 10:56:00', 'Pendiente');
+
+INSERT INTO PQRs (user_id, pqr_type, description, request_date, status)
+VALUES 
+(1, 'reclamo', 'Producto recibido dañado.', '2024-10-24 10:12:00', 'Pendiente'),
+(2, 'sugerencia', 'Mejorar el tiempo de entrega.', '2024-10-24 10:17:00', 'Pendiente'),
+(3, 'reclamo', 'No he recibido mi pedido.', '2024-10-24 10:22:00', 'Pendiente'),
+(4, 'sugerencia', 'Agregar más métodos de pago.', '2024-10-24 10:27:00', 'Pendiente'),
+(5, 'reclamo', 'Falta un artículo en mi pedido.', '2024-10-24 10:32:00', 'Pendiente'),
+(6, 'sugerencia', 'Mejorar la atención al cliente.', '2024-10-24 10:37:00', 'Pendiente'),
+(7, 'reclamo', 'El producto no funciona correctamente.', '2024-10-24 10:42:00', 'Pendiente'),
+(8, 'sugerencia', 'Hacer seguimiento a las órdenes.', '2024-10-24 10:47:00', 'Pendiente'),
+(9, 'reclamo', 'Demora en la respuesta.', '2024-10-24 10:52:00', 'Pendiente'),
+(10, 'sugerencia', 'Agregar más opciones de envío.', '2024-10-24 10:57:00', 'Pendiente');
+
+
