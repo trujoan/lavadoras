@@ -1,4 +1,4 @@
-body { 
+body {
     font-family: Arial, sans-serif;
     background-color: #005d7e;
     margin: 0; /* Eliminar márgenes del body */
@@ -47,32 +47,17 @@ nav a:hover {
     position: absolute;
     top: 0;
     width: 45%;
-    height: 100%; /* Asegúrate de que ocupa toda la altura */
-    padding: 40px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centrar verticalmente el contenido */
-    align-items: center; /* Centrar horizontalmente los elementos */
-    height: 100%;
+    height: 90%;
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     overflow: auto;
-    transition: transform 0.2s ease-in-out;
     z-index: 1;
 }
 
-.login-container {
-    left: 0;
-    padding-top: 15px; /* Subir los campos más para centrar verticalmente */
-    margin-bottom: 20px; /* Espacio entre los formularios */
-
-}
-
 .register-container {
-    right: 0;
-    transform: translateX(100%);
+    left: 0;
 }
 
 .logo {
@@ -85,7 +70,7 @@ nav a:hover {
     align-items: center;
     background-color: #c6f0ec;
     transition: transform 0.2s ease-in-out;
-    z-index: 2;
+    z-index: 2; /* La imagen está en la parte superior */
 }
 
 .logo img {
@@ -94,40 +79,25 @@ nav a:hover {
     object-fit: contain;
 }
 
-.container.show-register .logo {
-    transform: translateX(-100%);
-}
-
-.container.show-register .register-container {
-    transform: translateX(0);
-}
-
 .form-container h2 {
     text-align: center;
-    margin-bottom: 30px; /* Más margen inferior */
+    margin-bottom: 20px;
     color: #153448;
 }
 
 .input-group {
-    width: 100%; /* Ancho completo */
-    margin-bottom: 20px; /* Más espacio entre los campos */
-    display: flex;
-    flex-direction: column; /* Alinear los elementos verticalmente */
-    align-items: center; /* Centrar los elementos dentro del grupo */
-
     margin-bottom: 15px;
 }
 
 .input-group label {
+    display: block;
     font-size: 14px;
     color: #333;
     margin-bottom: 5px;
-    width: 100%; /* Hacer que el label ocupe todo el ancho */
-    text-align: left; /* Alinear a la izquierda dentro del grupo */
 }
 
 .input-group input {
-    width: 95%; /* Ajuste de ancho del input */
+    width: 95%;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -157,15 +127,10 @@ button {
     border: none;
     border-radius: 4px;
     font-size: 16px;
-    cursor: pointer;
 }
 
 button:hover {
     background-color: #0056b3;
-}
-
-.hidden {
-    display: none;
 }
 
 /* Media Queries para hacer el diseño responsive */

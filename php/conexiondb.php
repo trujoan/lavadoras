@@ -5,11 +5,13 @@ $username = "root";
 $password = ""; 
 $dbname = "lavafix";
 
-//create conection
+// Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
-//check conection
-if(!$conn){
-    die("conection failed: ".mysqli_connect_error());
+
+// Verificar conexión
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
 }
-//echo "conexion realizada"
+
+// echo "Conexión realizada";
 ?>
