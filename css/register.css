@@ -104,6 +104,21 @@ nav a:hover {
     font-size: 14px;
 }
 
+.register-link, .login-link {
+    margin-bottom: 15px;
+    text-align: right;
+}
+
+.register-link a, .login-link a {
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.register-link a:hover, .login-link a:hover {
+    text-decoration: underline;
+}
+
 button {
     width: 100%;
     padding: 10px;
