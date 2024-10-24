@@ -5,12 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="css/login.css">
+    <style>
+        nav {
+            display: flex;
+            justify-content: flex-end; /* Alinear el contenido a la derecha */
+        }
+        nav a {
+            display: flex;
+            align-items: center;
+            color: white; /* Color del ícono */
+            text-decoration: none; /* Sin subrayado */
+        }
+        svg {
+            width: 32px; /* Tamaño del ícono */
+            height: 32px; /* Tamaño del ícono */
+            fill: white; /* Color del ícono */
+            margin-left: 8px; /* Espacio a la izquierda del ícono */
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li>
+                    <a href="index.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12 3l-9 9h2v9h5v-5h4v5h5v-9h2z"/>
+                        </svg>
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -39,6 +63,6 @@
         </div>
     </div>
 
-    <!-- <script src="js/login.js" defer></script> >
+    <!-- <script src="js/login.js" defer></script> -->
 </body>
 </html>
