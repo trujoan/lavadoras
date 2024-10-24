@@ -99,12 +99,29 @@ CREATE TABLE PQRs (
     FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE  -- Relación con la tabla Users
 );
 
-
-insert into Users (first_name, last_Name, username, email, password, role)
-values ('Sanchez', 'Pedro', 'Sandnes', 'pedro@correo.com', 12345678, '3');
-
-insert into Users (first_name, last_Name, username, email, password, role)
-values ('Dana', 'Morales', 'danam', 'dana@correo.com', 12345678, '1');
-
-insert into Users (first_name, last_Name, username, email, password, role)
-values ('Angel', 'Trujillo', 'angt', 'angel@correo.com', 12345678, '2');
+-- Insertar registros en la tabla Users
+INSERT INTO Users (first_name, last_Name, username, email, password, role)
+VALUES 
+('Sanchez', 'Pedro', 'Sandnes', 'pedro@correo.com', '12345678', '3'),
+('Dana', 'Morales', 'danam', 'dana@correo.com', '12345678', '1'),
+('Angel', 'Trujillo', 'angt', 'angel@correo.com', '12345678', '2'),
+('Luis', 'Garcia', 'lgarcia', 'luis@correo.com', '12345678', '3'),
+('Ana', 'Lopez', 'alopez', 'ana@correo.com', '12345678', '2'),
+('Jorge', 'Martinez', 'jmartinez', 'jorge@correo.com', '12345678', '3'),
+('Marta', 'Rodriguez', 'mrodriguez', 'marta@correo.com', '12345678', '1'),
+('Carlos', 'Perez', 'cperez', 'carlos@correo.com', '12345678', '2'),
+('Claudia', 'Ramirez', 'cramirez', 'claudia@correo.com', '12345678', '3'),
+('Diego', 'Hernandez', 'dhernandez', 'diego@correo.com', '12345678', '2'),
+('Lucia', 'Fernandez', 'lfernandez', 'lucia@correo.com', '12345678', '3'),
+('Miguel', 'Gonzalez', 'mgonzalez', 'miguel@correo.com', '12345678', '1'),
+('Sofia', 'Vega', 'svega', 'sofia@correo.com', '12345678', '2'),
+('Esteban', 'Torres', 'etorres', 'esteban@correo.com', '12345678', '3'),
+('Carmen', 'Sanchez', 'csanchez', 'carmen@correo.com', '12345678', '2'),
+('Rafael', 'Morales', 'rmorales', 'rafael@correo.com', '12345678', '3'),
+('Isabel', 'Gomez', 'igomez', 'isabel@correo.com', '12345678', '1'),
+('David', 'Diaz', 'ddiaz', 'david@correo.com', '12345678', '2'),
+('Fernanda', 'Rios', 'frios', 'fernanda@correo.com', '12345678', '3'),
+('Andres', 'Castro', 'acastro', 'andres@correo.com', '12345678', '1'),
+('Paula', 'Ortiz', 'portiz', 'paula@correo.com', '12345678', '2'),
+('Jose', 'Mendoza', 'jmendoza', 'jose@correo.com', '12345678', '3'),
+('Valentina', 'Silva', 'vsilva', 'valentina@correo.com', '12345678', '1');

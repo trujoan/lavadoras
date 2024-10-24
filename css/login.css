@@ -48,25 +48,25 @@ nav a:hover {
     top: 0;
     width: 45%;
     height: 100%; /* Asegúrate de que ocupa toda la altura */
-    padding: 20px; /* Reducir padding en pantallas pequeñas */
+    padding: 40px 20px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Asegúrate de que empieza desde el top */
-    overflow: auto; /* Añadir scroll interno si es necesario */
+    justify-content: center; /* Centrar verticalmente el contenido */
+    align-items: center; /* Centrar horizontalmente los elementos */
+    overflow: auto;
     transition: transform 0.2s ease-in-out;
     z-index: 1;
 }
 
-/* Agregar margen para crear espacio */
 .login-container {
     left: 0;
+    padding-top: 15px; /* Subir los campos más para centrar verticalmente */
     margin-bottom: 20px; /* Espacio entre los formularios */
 }
 
 .register-container {
     right: 0;
     transform: translateX(100%);
-   /* margin-top: 20px; /* Espacio entre los formularios */
 }
 
 .logo {
@@ -98,23 +98,28 @@ nav a:hover {
 
 .form-container h2 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px; /* Más margen inferior */
     color: #153448;
 }
 
 .input-group {
-    margin-bottom: 15px; /* Reducir margen inferior */
+    width: 100%; /* Ancho completo */
+    margin-bottom: 20px; /* Más espacio entre los campos */
+    display: flex;
+    flex-direction: column; /* Alinear los elementos verticalmente */
+    align-items: center; /* Centrar los elementos dentro del grupo */
 }
 
 .input-group label {
-    display: block;
     font-size: 14px;
     color: #333;
     margin-bottom: 5px;
+    width: 100%; /* Hacer que el label ocupe todo el ancho */
+    text-align: left; /* Alinear a la izquierda dentro del grupo */
 }
 
 .input-group input {
-    width: 95%;
+    width: 95%; /* Ajuste de ancho del input */
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;

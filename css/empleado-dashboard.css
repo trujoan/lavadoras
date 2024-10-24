@@ -2,11 +2,11 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #f0f4f8; /* Color de fondo más claro */
 }
 
 header {
-    background-color: #2baaaa;
+    background-color: #082745; /* Cambiado para coincidir con el diseño original */
     color: #ffffff;
     padding: 20px;
     text-align: center;
@@ -28,19 +28,25 @@ nav a {
 }
 
 main {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar contenido */
     padding: 20px;
 }
 
 section {
     background: #ffffff;
-    border-radius: 5px;
+    border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin: 20px 0;
     padding: 15px;
+    width: 100%;
+    max-width: 600px; /* Ancho máximo para secciones */
 }
 
 h2 {
-    color: #2baaaa;
+    color: #0033a0; /* Color actualizado */
+    text-align: center; /* Centrar títulos */
 }
 
 form {
@@ -62,19 +68,20 @@ input, select, textarea {
 button {
     margin-top: 15px;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #007bff; /* Color de botón, manteniendo el original */
     color: #ffffff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    width: 100%; /* Botón al 100% del contenedor */
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Color de hover del botón */
 }
 
 footer {
-    background-color: #3C5B6F;
+    background-color: #082745; /* Cambiado para coincidir con el diseño original */
     color: #ffffff;
     text-align: center;
     padding: 10px;

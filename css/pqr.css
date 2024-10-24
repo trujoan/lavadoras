@@ -20,59 +20,17 @@ header {
     padding: 0 20px;
 }
 
-.left-menu, .right-menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-.left-menu li {
-    position: relative;
-}
-
-.left-menu .dropdown {
-    color: #ffffff;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-}
-
-.left-menu .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #00688d;
-    min-width: 160px;
-    z-index: 1;
-}
-
-.left-menu li:hover .dropdown-content {
-    display: block;
-}
-
-.left-menu .dropdown-content a {
-    color: #ffffff;
-    text-decoration: none;
-    display: block;
-    padding: 8px 16px;
-}
-
-.right-menu li {
-    margin: 0 15px;
-}
-
-.right-menu a {
-    color: #fdfeff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
 main {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar horizontalmente */
     padding: 20px;
 }
 
 .form-section {
-    margin: 20px 0;
+    width: 100%; /* Asegurarse de que ocupe todo el ancho */
+    max-width: 500px; /* Ancho máximo para cada sección */
+    margin: 20px 0; /* Espacio vertical entre secciones */
     padding: 15px;
     background-color: #ffffff;
     border-radius: 8px;
@@ -81,6 +39,7 @@ main {
 
 .form-section h3 {
     color: #0033a0;
+    text-align: center; /* Centrar el título */
 }
 
 label {
@@ -104,6 +63,7 @@ button {
     cursor: pointer;
     border-radius: 5px;
     font-weight: bold;
+    width: 100%; /* Botones al 100% del contenedor */
 }
 
 button:hover {
@@ -112,4 +72,11 @@ button:hover {
 
 .tracking-section {
     margin-top: 20px;
+}
+
+footer {
+    text-align: center; /* Texto del pie centrado */
+    padding: 10px 0;
+    background-color: #082745;
+    color: #ffffff;
 }
