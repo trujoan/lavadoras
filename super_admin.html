@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Super Admin - LavaFix_co</title>
-    <link rel="stylesheet" href="css\super_admin.css">
+    <link rel="stylesheet" href="css/super_admin.css">
+    <script src="js/super_admin.js" defer></script>
 </head>
 <body>
     <header>
@@ -20,9 +21,13 @@
         <section id="user-management">
             <h2>Gestión de Usuarios</h2>
             <form id="user-form">
-                <input type="text" id="username" placeholder="Nombre de Usuario" required>
-                <input type="password" id="password" placeholder="Contraseña" required>
-                <button type="submit">Crear Usuario</button>
+                <input type="hidden" id="user-id"> <!-- Para actualizar -->
+                <input type="text" id="first-name" placeholder="Nombre" required>
+                <input type="text" id="last-name" placeholder="Apellido" required>
+                <input type="text" id="new-username" placeholder="Nombre de Usuario" required>
+                <input type="email" id="email" placeholder="Correo Electrónico" required>
+                <input type="password" id="new-password" placeholder="Contraseña" required>
+                <button type="submit">Crear/Actualizar Usuario</button>
             </form>
             <div id="user-list">
                 <h3>Usuarios Actuales</h3>
@@ -53,7 +58,5 @@
     <footer>
         <p>&copy; 2024 Tiendas de Electrodomésticos. Todos los derechos reservados.</p>
     </footer>
-
-    <script src="js\super_admin.js"></script>
 </body>
 </html>
