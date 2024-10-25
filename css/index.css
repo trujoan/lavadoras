@@ -199,7 +199,25 @@ footer {
     background-color: #3C5B6F;
     color: #ffffff;
     text-align: center;
-    padding: 10px;
+    padding: 20px 0; /* Aumentar el padding para mejor apariencia */
+    position: relative; /* Asegura que el footer esté en su lugar */
+    bottom: 0; /* Posiciona al fondo de la página */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra para separación */
+}
+
+footer p {
+    margin: 5px 0; /* Espaciado entre los párrafos */
+}
+
+footer a {
+    color: #f1b05b;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
 
 /* Media Queries */
@@ -217,6 +235,10 @@ footer {
 
     .product-list {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    footer {
+        padding: 15px 0; /* Ajustar padding en pantallas pequeñas */
     }
 }
 
