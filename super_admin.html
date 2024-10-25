@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Super Admin - LavaFix_co</title>
-    <link rel="stylesheet" href="css\super_admin.css">
+    <link rel="stylesheet" href="css/super_admin.css">
 </head>
 <body>
     <header>
@@ -17,43 +17,36 @@
     </header>
 
     <main>
-        <section id="user-management">
-            <h2>Gestión de Usuarios</h2>
-            <form id="user-form">
-                <input type="text" id="username" placeholder="Nombre de Usuario" required>
-                <input type="password" id="password" placeholder="Contraseña" required>
+        <div class="card-container">
+            <section id="create-user" class="card">
+                <h2>Crear Usuario</h2>
                 <button type="submit">Crear Usuario</button>
-            </form>
-            <div id="user-list">
-                <h3>Usuarios Actuales</h3>
-                <ul id="users"></ul>
-            </div>
-        </section>
+            </section>
 
-        <section id="order-management">
-            <h2>Gestión de Órdenes de Compra</h2>
-            <div id="order-list">
-                <h3>Órdenes Actuales</h3>
-                <ul id="orders">
-                    <!-- Las órdenes se agregarán aquí mediante JavaScript -->
-                </ul>
-            </div>
-        </section>
+            <section id="modify-user" class="card">
+                <h2>Modificar Usuario</h2>
+                <button type="button" id="modify-button">Modificar Usuario</button>
+            </section>
 
-        <section id="changes-log">
-            <h2>Registro de Cambios Realizados por Empleados</h2>
-            <div id="change-log">
-                <ul>
-                    <!-- Los cambios se agregarán aquí mediante JavaScript -->
-                </ul>
-            </div>
-        </section>
+            <section id="delete-user" class="card">
+                <h2>Eliminar Usuario</h2>
+                <button type="button" id="delete-button">Eliminar Usuario</button>
+            </section>
+
+            <section id="changes-log" class="card">
+                <h2>Historial de Cambios de Empleados</h2>
+                <button type="button" id="changes-button">Ver Historial</button>
+            </section>
+
+            <section id="order-management" class="card">
+                <h2>Ver Órdenes de Compra de Clientes</h2>
+                <button type="button" id="changes-button">Ver Ordenes de Compras</button>
+            </section>
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2024 Tiendas de Electrodomésticos. Todos los derechos reservados.</p>
     </footer>
-
-
 </body>
 </html>
