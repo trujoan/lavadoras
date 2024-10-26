@@ -72,7 +72,7 @@ input {
 }
 
 
-.btn-crear-usuario {
+.btn {
     display: inline-block;
     padding: 10px 20px;
     background-color: #007bff;
@@ -83,7 +83,7 @@ input {
     margin-top: 10px; /* Espacio superior */
 }
 
-.btn-crear-usuario:hover {
+.btn:hover {
     background-color: #0056b3;
 }
 
