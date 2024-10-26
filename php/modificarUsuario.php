@@ -1,4 +1,6 @@
 <?php
+session_start(); // Iniciar la sesión
+
 // Conexión a la base de datos
 include 'conexiondb.php';
 
@@ -57,15 +59,18 @@ if (isset($_GET['id'])) {
         $update_sql = "UPDATE Users SET first_name='$first_name', last_name='$last_name', username='$username', email='$email', role='$role' WHERE user_id='$user_id'";
 
         if ($conn->query($update_sql) === TRUE) {
-            echo "Usuario actualizado correctamente.";
-            // Redirigir a la página actual para evitar reenvío del formulario
-            header("Location: modificarUsuarios.php");
+            $_SESSION['message'] = "Usuario actualizado correctamente."; // Guardar mensaje en sesión
+            header("Location: super_admin.html"); // Redirigir a super_admin.html
             exit();
         } else {
             echo "Error actualizando el usuario: " . $conn->error;
         }
     }
 }
+
+// Mostrar mensaje si existe
+$message = isset($_SESSION['message']) ? $_SESSION['message'] : '';
+unset($_SESSION['message']); // Limpiar mensaje después de mostrar
 
 $conn->close();
 ?>
@@ -76,7 +81,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modificar Usuarios - LavaFix</title>
-    <link rel="stylesheet" href="css/super_admin.css">
+    <link rel="stylesheet" href="css/modificarUsuarios.css"> <!-- Incluir el CSS -->
 </head>
 <body>
     <header>
@@ -88,6 +93,10 @@ $conn->close();
             <input type="text" name="searchTerm" placeholder="Buscar por username o correo" required>
             <button type="submit">Buscar</button>
         </form>
+
+        <?php if ($message): ?>
+            <p class="success-message"><?php echo htmlspecialchars($message); ?></p>
+        <?php endif; ?>
 
         <?php if (!empty($usuarios)): ?>
             <h2>Resultados de la búsqueda:</h2>
