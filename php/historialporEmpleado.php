@@ -52,7 +52,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historial por Empleado</title>
-    <link rel="stylesheet" href="css\historialporEmpleado.css">
+    <link rel="stylesheet" href="..\css\historialporEmpleado.css">
 </head>
 <body>
     <div class="container">
