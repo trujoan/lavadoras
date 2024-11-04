@@ -86,7 +86,7 @@ $conn->close();
                     </ul>
                 </li>
             </ul>
-            <h1>LavaFix_co</h1>
+            <h1>Crear Usuario</h1>
             <ul class="right-menu">
                 <li>
                     <a href="login.html" class="icon-person">
