@@ -62,9 +62,43 @@ $conn->close();
 </head>
 <body>
 
-<header>
-    <h1>Crear Usuario</h1>
-</header>
+    <header> 
+        <nav class="navbar">
+            <ul class="left-menu">
+                <li>
+                    <a href="#" class="dropdown">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="Capa_1" x="0px" y="0px"
+                            viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"
+                            width="512" height="512">
+                            <g>
+                                <path
+                                    d="M480,224H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h448c17.673,0,32-14.327,32-32S497.673,224,480,224z" />
+                                <path
+                                    d="M32,138.667h448c17.673,0,32-14.327,32-32s-14.327-32-32-32H32c-17.673,0-32,14.327-32,32S14.327,138.667,32,138.667z" />
+                                <path
+                                    d="M480,373.333H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h448c17.673,0,32-14.327,32-32S497.673,373.333,480,373.333z" />
+                            </g>
+                        </svg>
+                    </a>
+                    <ul class="dropdown-content">
+                        <li><a href="ofertas.html">Ofertas</a></li>
+                        <li><a href="pqr.html">PQR</a></li>                        
+                    </ul>
+                </li>
+            </ul>
+            <h1>LavaFix_co</h1>
+            <ul class="right-menu">
+                <li>
+                    <a href="login.html" class="icon-person">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-3.31 0-10 1.67-10 5v2h20v-2c0-3.33-6.69-5-10-5z"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
 
 <main>
     <?php if (!empty($errors)): ?>
@@ -90,6 +124,16 @@ $conn->close();
         <input type="submit" value="Crear Usuario">
     </form>
 </main>
+
+<footer>
+        <p>&copy; 2024 Lavadoras Premium. Todos los derechos reservados.</p>
+        <p>Síguenos: 
+            <a href="#" aria-label="WhatsApp">📱</a>
+            <a href="#" aria-label="Facebook">📘</a>
+            <a href="#" aria-label="Instagram">📸</a>
+        </p>
+        <p>📍 Carrera 2 #15-19, Bogotá</p>
+    </footer>
 
 </body>
 </html>
