@@ -21,7 +21,7 @@ if (mysqli_num_rows($result)>0){
             break;
             case "2": header("location: ../empleado-dashboard.html");
             break;
-            case "3": header("location: ../dashboard.html");
+            case "3": header("location: ./dashboard.php");
             break;
         }
     }
