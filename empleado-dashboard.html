@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard de Empleado</title>
     <link rel="stylesheet" href="css/empleado-dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
@@ -13,9 +14,12 @@
         <h1>Dashboard de Empleado</h1>
         <nav>
             <ul>
-                <li><a href="#consultas">Actualizar Consultas</a></li>
-                <li><a href="#estado">Actualizar Estado</a></li>
-                <li><a href="#historial">Historial de Compras</a></li>
+                <!-- Enlace para cerrar sesión con ícono -->
+                <li>
+                    <a href="login.html">
+                        <i class="fas fa-sign-out-alt logout-icon"></i> <!-- Ícono de log out -->
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -45,20 +49,6 @@
 
                 <button type="submit">Actualizar Consulta</button>
             </form>
-        </section>
-
-        <section id="estado">
-            <h2>Actualizar Estado de Compras</h2>
-            <div id="estado-compras">
-                <!-- Aquí se cargarán los estados de compra -->
-            </div>
-        </section>
-
-        <section id="historial">
-            <h2>Historial de Compras y Servicios</h2>
-            <div id="historial-list">
-                <!-- Aquí se cargará el historial -->
-            </div>
         </section>
     </main>
 
