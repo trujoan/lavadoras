@@ -70,7 +70,7 @@ $conn->close();
         <ul class="right-menu">
             <li>
                 <!-- Enlace para logout, utilizando el ícono de Font Awesome -->
-                <a href="logout.php" class="icon-logout">
+                <a href="../super_admin.html" class="icon-logout">
                     <i class="fas fa-sign-out-alt"></i> <!-- Ícono de logout -->
                 </a>
             </li>
