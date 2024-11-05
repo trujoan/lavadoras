@@ -19,7 +19,7 @@ if (mysqli_num_rows($result)>0){
         switch ($tipoUsuario){
             case "1": header("location: ../super_admin.html");
             break;
-            case "2": header("location: ../empleado-dashboard.html");
+            case "2": header("location: ../empleado.html");
             break;
             case "3": header("location: ./dashboard.php");
             break;
