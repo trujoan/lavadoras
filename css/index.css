@@ -196,54 +196,93 @@ main {
 }
 
 footer {
-    background-color: #3C5B6F;
+    background-color: #3C5B6F; /* Fondo oscuro para el footer */
     color: #ffffff;
     text-align: center;
-    padding: 20px 0; /* Aumentar el padding para mejor apariencia */
-    position: relative; /* Asegura que el footer esté en su lugar */
-    bottom: 0; /* Posiciona al fondo de la página */
-    width: 100%; /* Asegura que ocupe todo el ancho */
+    padding: 20px 0; /* Aumentamos el padding para mejor apariencia */
+    position: relative;
+    width: 100%;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra para separación */
 }
 
 footer p {
-    margin: 5px 0; /* Espaciado entre los párrafos */
+    margin: 5px 0;
 }
 
-footer a {
-    color: #f1b05b;
-    text-decoration: none;
-    margin: 0 5px;
+.footer-content {
+    display: flex; /* Usamos Flexbox para dividir en dos secciones */
+    justify-content: space-between; /* Aseguramos que haya espacio entre las dos secciones */
+    align-items: center; /* Centrado vertical */
+    margin-top: 20px;
+    padding: 0 20px; /* Espaciado entre las columnas */
 }
 
-footer a:hover {
-    text-decoration: underline;
+.social-section, .map-section {
+    width: 48%; /* Cada sección ocupará el 48% del espacio */
 }
 
-/* Media Queries */
+.social-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .social-icon {
+    font-size: 75px; /* Íconos más grandes */
+    margin: 10px 0;
+    color: #ffffff;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+footer .social-icon:hover {
+    transform: scale(1.2); /* Agranda los íconos al pasar el ratón */
+}
+
+footer .whatsapp {
+    color: #25D366; /* Color verde de WhatsApp */
+}
+
+footer .facebook {
+    color: #1877F2; /* Color azul de Facebook */
+}
+
+footer .instagram {
+    color: #E4405F; /* Color rosa de Instagram */
+}
+
+footer .location {
+    font-size: 18px;
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+footer .map-container {
+    margin-top: 15px;
+    border-radius: 8px; /* Bordes redondeados para el mapa */
+    overflow: hidden; /* Asegura que el mapa tenga bordes suaves */
+}
+
+footer iframe {
+    border: 0;
+    width: 100%; /* Hace que el mapa ocupe todo el ancho */
+    height: 300px; /* Altura del mapa */
+    border-radius: 8px; /* Bordes redondeados del mapa */
+}
+
+footer .map-container iframe {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para el mapa */
+}
+
+/* Media Query para pantallas pequeñas */
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
+    .footer-content {
+        flex-direction: column; /* En pantallas pequeñas, las secciones se apilan */
+        align-items: center; /* Alineación centrada */
     }
 
-    .filters {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-top: 10px;
-    }
-
-    .product-list {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    footer {
-        padding: 15px 0; /* Ajustar padding en pantallas pequeñas */
-    }
-}
-
-@media (max-width: 480px) {
-    .product-list {
-        grid-template-columns: 1fr; /* Una columna en móviles */
+    .social-section, .map-section {
+        width: 100%; /* Las secciones ocupan el 100% en dispositivos pequeños */
+        margin-bottom: 20px; /* Espacio entre las secciones */
     }
 }
