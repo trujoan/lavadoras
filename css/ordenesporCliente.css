@@ -1,55 +1,80 @@
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #005d7e; /* Color de fondo coherente con el primer CSS */
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    color: #ffffff; /* Texto blanco para mejor contraste */
 }
 
+/* Contenedor principal de formulario */
 .container {
     width: 50%;
     margin: 50px auto;
-    background: white;
+    background: #082745; /* Fondo oscuro para el contenedor */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Títulos */
 h1 {
     text-align: center;
-    color: #333;
+    color: #ffffff; /* Título en blanco para contraste */
 }
 
+/* Etiquetas */
 label {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
+    color: #ffffff; /* Etiquetas en blanco */
 }
 
-input[type="text"] {
-    width: 100%;
+/* Campos de entrada de texto */
+input[type="text"], input[type="email"], select {
+    width: 60%; /* Hacer el input más angosto (ajustar el porcentaje a tu gusto) */
     padding: 10px;
-    margin-bottom: 20px;
+    margin: 10px auto; /* Centrar el input dentro del contenedor */
     border: 1px solid #ccc;
     border-radius: 4px;
+    display: block; /* Asegura que el input ocupe una línea completa */
 }
 
+/* Opción para el botón también */
 button {
     background-color: #007bff;
-    color: white;
+    color: #ffffff;
     border: none;
     padding: 10px 15px;
     border-radius: 4px;
     cursor: pointer;
+    width: 60%; /* El botón también puede ser más angosto y centrado */
+    margin: 20px auto; /* Centramos el botón */
+    display: block; /* Asegura que el botón ocupe toda la línea disponible */
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Efecto hover coherente con el primer CSS */
 }
 
+/* Confirmación de acción */
+.confirmation {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: #f8f9fa; /* Fondo claro para el mensaje de confirmación */
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Tabla */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    background-color: #082745; /* Fondo de tabla oscuro para coincidir con la paleta */
 }
 
 th, td {
@@ -59,10 +84,111 @@ th, td {
 }
 
 th {
-    background-color: #007bff;
+    background-color: #007bff; /* Color de fondo de las cabeceras */
     color: white;
 }
 
 tr:nth-child(even) {
     background-color: #f2f2f2;
+}
+
+/* Estilos para la barra de navegación y cabecera */
+header {
+    background-color: #082745;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.left-menu, .right-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.left-menu li {
+    position: relative;
+}
+
+.left-menu .dropdown {
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.left-menu .dropdown svg {
+    width: 24px; /* Ajustar el tamaño del logo */
+    height: auto;
+    margin-right: 8px; /* Espacio entre el logo y el texto */
+    fill: white;
+}
+
+.left-menu .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #00688d;
+    min-width: 160px;
+    z-index: 1;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: max-height 0.3s ease-out;
+}
+
+.left-menu li.show .dropdown-content {
+    display: block;
+}
+
+.left-menu li:hover .dropdown-content {
+    display: block;
+}
+
+.left-menu .dropdown-content a {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    padding: 8px 16px;
+}
+
+.right-menu li {
+    margin: 0 15px;
+}
+
+.right-menu a {
+    color: #fdfeff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background-color: #3C5B6F;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #f1b05b;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }

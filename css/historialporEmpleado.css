@@ -1,38 +1,59 @@
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #005d7e; /* Fondo oscuro */
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    color: #ffffff; /* Texto blanco */
 }
 
+/* Contenedor principal de formulario */
 .container {
     width: 50%;
     margin: 50px auto;
-    background: white;
+    background: #082745; /* Fondo oscuro para el contenedor */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Títulos */
 h1 {
     text-align: center;
-    color: #333;
+    color: #ffffff; /* Título en blanco */
 }
 
+/* Etiquetas */
 label {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
+    color: #ffffff; /* Etiquetas en blanco */
 }
 
-input[type="number"] {
-    width: 100%;
+/* Campos de entrada */
+input[type="text"], input[type="number"], input[type="email"], select {
+    width: 60%; /* Ajustar el ancho para que no ocupe todo el espacio */
     padding: 10px;
-    margin-bottom: 20px;
+    margin: 10px auto; /* Centramos el input dentro del contenedor */
     border: 1px solid #ccc;
     border-radius: 4px;
+    display: block; /* Asegura que el input ocupe toda la línea disponible */
+    background-color:  #ffffff; /* Fondo azul oscuro */
+    color: white; /* Texto blanco */
+    text-align: left; /* Alineamos el texto a la izquierda dentro del input */
 }
 
+/* Si quieres centrar el texto dentro del input, puedes cambiarlo a: */
+/*
+input[type="text"], input[type="number"], input[type="email"], select {
+    text-align: center; 
+}
+*/
+
+
+/* Botón */
 button {
     background-color: #007bff;
     color: white;
@@ -40,12 +61,15 @@ button {
     padding: 10px 15px;
     border-radius: 4px;
     cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
 }
 
 button:hover {
     background-color: #0056b3;
 }
 
+/* Tabla */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -59,10 +83,14 @@ th, td {
 }
 
 th {
-    background-color: #007bff;
+    background-color: #007bff; /* Azul para los encabezados */
     color: white;
 }
 
 tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #003c52; /* Fila alternada con fondo más oscuro */
+}
+
+tr:nth-child(odd) {
+    background-color: #004f6d; /* Fila impar con fondo azul oscuro */
 }

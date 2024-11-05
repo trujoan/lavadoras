@@ -83,6 +83,10 @@ header {
 main {
     padding: 20px;
     color: #ffffff;
+    display: flex;
+    justify-content: center;  /* Centra el formulario horizontalmente */
+    align-items: center;      /* Centra el formulario verticalmente */
+    min-height: 70vh;          /* Solo centrar el formulario, no afecta al título */
 }
 
 form {
@@ -91,7 +95,9 @@ form {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     max-width: 600px;
+    width: 100%;              /* El formulario ocupará todo el espacio disponible hasta el máximo de 600px */
 }
+
 
 input, select {
     padding: 10px;

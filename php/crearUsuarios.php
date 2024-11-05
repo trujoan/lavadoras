@@ -59,24 +59,24 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Usuario</title>
     <link rel="stylesheet" href="..\css\crearUsuarios.css"> 
+    <!-- Agregar Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-    <header> 
-        <nav class="navbar">
-            <h1>Crear Usuario</h1>
-            <ul class="right-menu">
-                <li>
-                    <a href="login.html" class="icon-person">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24">
-                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-3.31 0-10 1.67-10 5v2h20v-2c0-3.33-6.69-5-10-5z"/>
-                        </svg>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
+<header> 
+    <nav class="navbar">
+        <h1>Crear Usuario</h1>
+        <ul class="right-menu">
+            <li>
+                <!-- Enlace para logout, utilizando el ícono de Font Awesome -->
+                <a href="logout.php" class="icon-logout">
+                    <i class="fas fa-sign-out-alt"></i> <!-- Ícono de logout -->
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
 
 <main>
     <?php if (!empty($errors)): ?>
@@ -103,15 +103,7 @@ $conn->close();
     </form>
 </main>
 
-<footer>
-        <p>&copy; 2024 Lavadoras Premium. Todos los derechos reservados.</p>
-        <p>Síguenos: 
-            <a href="#" aria-label="WhatsApp">📱</a>
-            <a href="#" aria-label="Facebook">📘</a>
-            <a href="#" aria-label="Instagram">📸</a>
-        </p>
-        <p>📍 Carrera 2 #15-19, Bogotá</p>
-    </footer>
+
 
 </body>
 </html>
