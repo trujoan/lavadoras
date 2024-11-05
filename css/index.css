@@ -249,6 +249,12 @@ footer .facebook {
 footer .instagram {
     color: #E4405F; /* Color rosa de Instagram */
 }
+footer .whatsapp,
+footer .facebook,
+footer .instagram {
+    color: #ffffff; /* Cambia el color de los íconos a blanco */
+}
+
 
 footer .location {
     font-size: 18px;

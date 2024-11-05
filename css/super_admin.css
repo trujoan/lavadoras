@@ -71,7 +71,6 @@ input {
     border-radius: 5px;
 }
 
-
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -122,12 +121,24 @@ footer {
     padding: 10px;
 }
 
-/* Media Queries para hacer el diseño responsive */
+/* Estilo para el ícono de Log Out */
+.logout-icon {
+    font-size: 24px; /* Ajusta el tamaño del ícono */
+    color: #ffffff; /* Color blanco para el ícono */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: transform 0.3s ease; /* Efecto suave al pasar el mouse */
+    text-decoration: none; /* Eliminar el subrayado si lo hay */
+}
+
+.logout-icon:hover {
+    transform: scale(1.1); /* Aumenta el tamaño del ícono al hacer hover */
+}
+
 @media (max-width: 768px) {
     input {
         width: calc(100% - 10px);
     }
-    
+
     button {
         width: 100%;
     }
