@@ -1,78 +1,13 @@
-/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
-    background-color: #005d7e; /* Color de fondo coherente con el primer CSS */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #ffffff; /* Texto blanco para mejor contraste */
+    background-color: #005d7e; /* Fondo general */
 }
 
-/* Contenedor principal de formulario */
-.container {
-    width: 50%;
-    margin: 50px auto;
-    background: #082745; /* Fondo oscuro para el contenedor */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Títulos */
-h1 {
-    text-align: center;
-    color: #ffffff; /* Título en blanco para contraste */
-}
-
-/* Etiquetas */
-label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #ffffff; /* Etiquetas en blanco */
-}
-
-/* Campos de entrada de texto */
-input[type="text"], input[type="email"], select {
-    width: 60%; /* Hacer el input más angosto (ajustar el porcentaje a tu gusto) */
-    padding: 10px;
-    margin: 10px auto; /* Centrar el input dentro del contenedor */
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    display: block; /* Asegura que el input ocupe una línea completa */
-}
-
-/* Opción para el botón también */
-button {
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 60%; /* El botón también puede ser más angosto y centrado */
-    margin: 20px auto; /* Centramos el botón */
-    display: block; /* Asegura que el botón ocupe toda la línea disponible */
-}
-
-
-button:hover {
-    background-color: #0056b3; /* Efecto hover coherente con el primer CSS */
-}
-
-/* Confirmación de acción */
-.confirmation {
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    background: #f8f9fa; /* Fondo claro para el mensaje de confirmación */
-    border-radius: 4px;
-    text-align: center;
-}
-
-/* Estilos para la barra de navegación y cabecera */
 header {
-    background-color: #082745;
+    background-color: #082745; /* Azul oscuro */
     color: #ffffff;
     padding: 10px 0;
     text-align: center;
@@ -104,35 +39,10 @@ header {
 }
 
 .left-menu .dropdown svg {
-    width: 24px; /* Ajustar el tamaño del logo */
+    width: 24px;
     height: auto;
-    margin-right: 8px; /* Espacio entre el logo y el texto */
+    margin-right: 8px;
     fill: white;
-}
-
-.left-menu .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #00688d;
-    min-width: 160px;
-    z-index: 1;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transition: max-height 0.3s ease-out;
-}
-
-.left-menu li.show .dropdown-content {
-    display: block;
-}
-
-.left-menu li:hover .dropdown-content {
-    display: block;
-}
-
-.left-menu .dropdown-content a {
-    color: #ffffff;
-    text-decoration: none;
-    display: block;
-    padding: 8px 16px;
 }
 
 .right-menu li {
@@ -145,7 +55,73 @@ header {
     font-weight: bold;
 }
 
-/* Footer */
+/* Contenedor principal del formulario */
+.container {
+    width: 50%;
+    margin: 50px auto;
+    background: #00688d; /* Fondo azul claro para el formulario */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff; /* Título en blanco */
+}
+
+/* Etiquetas */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Campos de entrada de texto */
+input[type="text"] {
+    width: 60%;
+    padding: 10px;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block;
+}
+
+button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 60%;
+    margin: 20px auto;
+    display: block;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.confirmation {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: #f8f9fa;
+    border-radius: 4px;
+    text-align: center;
+}
+.icon-logout i {
+    font-size: 24px; /* Ajusta el tamaño del ícono */
+    color: #ffffff;  /* Cambia el color del ícono */
+}
+
+.icon-logout i:hover {
+    color: #f1b05b;  /* Cambia el color cuando el ícono se pasa el mouse encima */
+}
+
+
 footer {
     background-color: #3C5B6F;
     color: #ffffff;

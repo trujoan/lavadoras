@@ -42,29 +42,47 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eliminar Usuario</title>
     <link rel="stylesheet" href="..\css\eliminarUsuario.css">
+    <!-- Agregar Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Eliminar Usuario</h1>
-        <form method="post" action="">
-            <label for="username_or_email">Ingrese Username o Correo:</label>
-            <input type="text" name="username_or_email" value="<?php echo htmlspecialchars($username_or_email); ?>" required>
-            <button type="submit">Buscar</button>
-        </form>
+    <header>
+        <nav class="navbar">
+            <h1>Eliminar Usuario</h1>
+            <ul class="right-menu">
+                <li>
+                    <!-- Enlace para logout, utilizando el ícono de Font Awesome -->
+                    <a href="../super_admin.html" class="icon-logout">
+                        <i class="fas fa-sign-out-alt"></i> <!-- Ícono de logout -->
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-        <?php if (!empty($message)): ?>
-            <div class="confirmation">
-                <p><?php echo $message; ?></p>
-                <?php if ($_SERVER["REQUEST_METHOD"] == "POST" && empty($error) && $confirm !== 'yes'): ?>
-                    <p>¿Está seguro de que desea eliminar el usuario "<?php echo htmlspecialchars($username_or_email); ?>"?</p>
-                    <form method="post" action="">
-                        <input type="hidden" name="username_or_email" value="<?php echo htmlspecialchars($username_or_email); ?>">
-                        <button type="submit" name="confirm" value="yes">Sí, eliminar</button>
-                        <button type="submit" name="confirm" value="no">No, cancelar</button>
-                    </form>
-                <?php endif; ?>
-            </div>
-        <?php endif; ?>
-    </div>
+    <main>
+        <div class="container">
+            <form method="post" action="">
+                <label for="username_or_email">Ingrese Username o Correo:</label>
+                <input type="text" name="username_or_email" value="<?php echo htmlspecialchars($username_or_email); ?>" required>
+                <button type="submit">Buscar</button>
+            </form>
+
+            <?php if (!empty($message)): ?>
+                <div class="confirmation">
+                    <p><?php echo $message; ?></p>
+                    <?php if ($_SERVER["REQUEST_METHOD"] == "POST" && empty($error) && $confirm !== 'yes'): ?>
+                        <p>¿Está seguro de que desea eliminar el usuario "<?php echo htmlspecialchars($username_or_email); ?>"?</p>
+                        <form method="post" action="">
+                            <input type="hidden" name="username_or_email" value="<?php echo htmlspecialchars($username_or_email); ?>">
+                            <button type="submit" name="confirm" value="yes">Sí, eliminar</button>
+                            <button type="submit" name="confirm" value="no">No, cancelar</button>
+                        </form>
+                    <?php endif; ?>
+                </div>
+            <?php endif; ?>
+        </div>
+    </main>
+
 </body>
 </html>
