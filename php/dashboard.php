@@ -1,36 +1,4 @@
-<?php
-// Conexión a la base de datos
-include 'conexiondb.php';
-session_start();
 
-// Suponiendo que ya tienes una sesión activa que almacena el ID del usuario
-if (!isset($_SESSION['user_id'])) {
-    // Redirige a la página de login si no hay sesión activa
-    header("Location: login.php");
-    exit();
-}
-
-$user_id = $_SESSION['user_id']; // Obtener el ID del usuario desde la sesión
-
-// Obtener el nombre del usuario desde la base de datos
-$sql = "SELECT first_name, last_name FROM Users WHERE user_id = $user_id";
-$result = $conn->query($sql);
-$user = $result->fetch_assoc();
-$full_name = $user['first_name'] . ' ' . $user['last_name'];
-
-// Consultas de servicios, estado de compras y historial
-// Consultas de servicios
-$services_sql = "SELECT * FROM Services WHERE user_id = $user_id";
-$services_result = $conn->query($services_sql);
-
-// Estado de compras
-$orders_sql = "SELECT * FROM Orders WHERE user_id = $user_id";
-$orders_result = $conn->query($orders_sql);
-
-// Historial de compras y servicios
-$history_sql = "SELECT * FROM PurchaseHistory WHERE user_id = $user_id";
-$history_result = $conn->query($history_sql);
-?>
 
 <!DOCTYPE html>
 <html lang="es">
