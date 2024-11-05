@@ -4,6 +4,7 @@ CREATE DATABASE LavaFix;
 -- Usar la base de datos
 USE LavaFix;
 
+
 -- Tabla para usuarios
 CREATE TABLE Users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,  -- ID único del usuario, se incrementa automáticamente
