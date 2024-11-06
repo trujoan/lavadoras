@@ -53,10 +53,25 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Órdenes de Compra por Cliente</title>
     <link rel="stylesheet" href="..\css\ordenesporCliente.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
+<header>
+        <nav class="navbar">
+        <h1>Órdenes de Compra por Cliente</h1>
+            <ul class="right-menu">
+                <li>
+                    <!-- Enlace para logout, utilizando el ícono de Font Awesome -->
+                    <a href="../super_admin.html" class="icon-logout">
+                        <i class="fas fa-sign-out-alt"></i> <!-- Ícono de logout -->
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 <body>
     <div class="container">
-        <h1>Órdenes de Compra por Cliente</h1>
+        
         <form method="post" action="">
             <label for="client_identifier">Ingrese Username o Correo Electrónico:</label>
             <input type="text" name="client_identifier" value="<?php echo htmlspecialchars($client_identifier); ?>" required>

@@ -1,18 +1,66 @@
-/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
-    background-color: #005d7e; /* Color de fondo coherente con el primer CSS */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #ffffff; /* Texto blanco para mejor contraste */
+    background-color: #005d7e; /* Fondo general */
 }
+
+header {
+    background-color: #082745; /* Azul oscuro */
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.left-menu, .right-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.left-menu li {
+    position: relative;
+}
+
+.left-menu .dropdown {
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.left-menu .dropdown svg {
+    width: 24px;
+    height: auto;
+    margin-right: 8px;
+    fill: white;
+}
+
+.right-menu li {
+    margin: 0 15px;
+}
+
+.right-menu a {
+    color: #fdfeff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 
 /* Contenedor principal de formulario */
 .container {
     width: 50%;
     margin: 50px auto;
-    background: #082745; /* Fondo oscuro para el contenedor */
+    background: #00688d; /* Fondo oscuro para el contenedor */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -68,6 +116,16 @@ button:hover {
     border-radius: 4px;
     text-align: center;
 }
+
+.icon-logout i {
+    font-size: 24px; /* Ajusta el tamaño del ícono */
+    color: #ffffff;  /* Cambia el color del ícono */
+}
+
+.icon-logout i:hover {
+    color: #f1b05b;  /* Cambia el color cuando el ícono se pasa el mouse encima */
+}
+
 
 /* Tabla */
 table {
