@@ -8,11 +8,54 @@ body {
     color: #ffffff; /* Texto blanco */
 }
 
+/* Encabezado */
+header {
+    background-color: #082745; /* Fondo azul oscuro */
+    color: #ffffff; /* Texto blanco */
+    padding: 10px 0;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.left-menu, .right-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.right-menu li {
+    margin-left: 15px;
+}
+
+.right-menu a {
+    color: #fdfeff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Estilo para el enlace de eliminar usuario */
+.left-menu li a {
+    color: #007bff; /* Azul oscuro */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.left-menu li a:hover {
+    color: #0056b3; /* Cambio de color al pasar el cursor */
+}
+
 /* Contenedor principal de formulario */
 .container {
     width: 50%;
     margin: 50px auto;
-    background: #082745; /* Fondo oscuro para el contenedor */
+    background-color: #00688d; /* Fondo azul claro */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -24,48 +67,42 @@ h1 {
     color: #ffffff; /* Título en blanco */
 }
 
-/* Etiquetas */
-label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #ffffff; /* Etiquetas en blanco */
-}
-
 /* Campos de entrada */
-input[type="text"], input[type="number"], input[type="email"], select {
-    width: 60%; /* Ajustar el ancho para que no ocupe todo el espacio */
+input[type="text"], input[type="email"], input[type="password"], select {
+    width: 60%; /* Ajustamos el tamaño al 100% */
     padding: 10px;
-    margin: 10px auto; /* Centramos el input dentro del contenedor */
+    margin: 10px auto;
     border: 1px solid #ccc;
     border-radius: 4px;
-    display: block; /* Asegura que el input ocupe toda la línea disponible */
-    background-color:  #ffffff; /* Fondo azul oscuro */
-    color: white; /* Texto blanco */
-    text-align: left; /* Alineamos el texto a la izquierda dentro del input */
+    display: block;
 }
-
-/* Si quieres centrar el texto dentro del input, puedes cambiarlo a: */
-/*
-input[type="text"], input[type="number"], input[type="email"], select {
-    text-align: center; 
-}
-*/
-
-
-/* Botón */
 button {
     background-color: #007bff;
-    color: white;
+    color: #ffffff;
     border: none;
     padding: 10px 15px;
     border-radius: 4px;
     cursor: pointer;
-    width: 100%;
-    margin-top: 20px;
+    width: 60%; /* Ajusta el ancho del botón */
+    margin: 20px auto; /* Centra el botón */
+    display: block;
 }
 
 button:hover {
+    background-color: #0056b3;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
@@ -93,4 +130,10 @@ tr:nth-child(even) {
 
 tr:nth-child(odd) {
     background-color: #004f6d; /* Fila impar con fondo azul oscuro */
+}
+
+/* Mensajes de error */
+.error {
+    color: #e74c3c;
+    margin-bottom: 20px;
 }

@@ -53,10 +53,28 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historial por Empleado</title>
     <link rel="stylesheet" href="..\css\historialporEmpleado.css">
+    <!-- Agregar Font Awesome para los íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="container">
+    <header>
+        <!-- Título del encabezado -->
         <h1>Historial de Cambios por Empleado</h1>
+
+        <!-- Menú de navegación con el ícono de logout -->
+        <nav class="right-menu">
+            <ul>
+                <li>
+                    <!-- Enlace para logout, utilizando el ícono de Font Awesome -->
+                    <a href="../super_admin.html" class="icon-logout">
+                        <i class="fas fa-sign-out-alt"></i> <!-- Ícono de logout -->
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
         <form method="post" action="">
             <label for="employee_identifier">Ingrese Username o Correo Electrónico:</label>
             <input type="text" name="employee_identifier" value="<?php echo htmlspecialchars($employee_identifier); ?>" required>
@@ -89,3 +107,4 @@ $conn->close();
     </div>
 </body>
 </html>
+
