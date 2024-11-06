@@ -58,12 +58,15 @@ $conn->close();
 </head>
 <body>
     <header>
+         <nav class="navbar">
+
+      
         <!-- Título del encabezado -->
         <h1>Historial de Cambios por Empleado</h1>
 
         <!-- Menú de navegación con el ícono de logout -->
-        <nav class="right-menu">
-            <ul>
+        
+            <ul class="right-menu">
                 <li>
                     <!-- Enlace para logout, utilizando el ícono de Font Awesome -->
                     <a href="../super_admin.html" class="icon-logout">

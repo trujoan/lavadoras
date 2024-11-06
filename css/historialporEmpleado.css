@@ -1,7 +1,7 @@
 /* Estilos generales */
 body {
     font-family: Arial, sans-serif;
-    background-color: #005d7e; /* Fondo oscuro */
+    background-color: #005d7e; /* Fondo general */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,52 +10,59 @@ body {
 
 /* Encabezado */
 header {
-    background-color: #082745; /* Fondo azul oscuro */
-    color: #ffffff; /* Texto blanco */
+    background-color: #082745; /* Azul oscuro */
+    color: #ffffff;
     padding: 10px 0;
     text-align: center;
 }
 
+/* Navbar */
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Esto separa el título y el logout */
     align-items: center;
     padding: 0 20px;
 }
 
-.left-menu, .right-menu {
+
+
+/* Menú derecho (logout) */
+.right-menu {
     list-style: none;
+    display: flex;
     padding: 0;
     margin: 0;
-    display: flex;
 }
 
 .right-menu li {
-    margin-left: 15px;
+    margin-left: 20px;
 }
 
 .right-menu a {
-    color: #fdfeff;
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
 }
 
-/* Estilo para el enlace de eliminar usuario */
-.left-menu li a {
-    color: #007bff; /* Azul oscuro */
-    text-decoration: none;
-    font-weight: bold;
+.right-menu a:hover {
+    color: #007bff; /* Hover sobre el logout */
 }
 
-.left-menu li a:hover {
-    color: #0056b3; /* Cambio de color al pasar el cursor */
+/* Icono de logout */
+.icon-logout i {
+    font-size: 24px; /* Ajusta el tamaño del ícono */
+    color: #ffffff;  /* Color del ícono */
 }
 
-/* Contenedor principal de formulario */
+.icon-logout i:hover {
+    color: #f1b05b;  /* Cambio de color cuando el ícono se pasa el mouse encima */
+}
+
+/* Contenedor principal del formulario */
 .container {
     width: 50%;
     margin: 50px auto;
-    background-color: #00688d; /* Fondo azul claro */
+    background: #00688d; /* Fondo azul claro para el contenedor */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -67,15 +74,28 @@ h1 {
     color: #ffffff; /* Título en blanco */
 }
 
+/* Etiquetas */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #ffffff; /* Etiquetas en blanco */
+}
+
 /* Campos de entrada */
-input[type="text"], input[type="email"], input[type="password"], select {
-    width: 60%; /* Ajustamos el tamaño al 100% */
+input[type="text"], input[type="number"], input[type="email"], select {
+    width: 60%; /* Ajustar el ancho para que no ocupe todo el espacio */
     padding: 10px;
-    margin: 10px auto;
+    margin: 10px auto; /* Centramos el input dentro del contenedor */
     border: 1px solid #ccc;
     border-radius: 4px;
-    display: block;
+    display: block; /* Asegura que el input ocupe toda la línea disponible */
+    background-color: #ffffff; /* Fondo blanco */
+    color: #333; /* Texto oscuro */
+    text-align: left; /* Alineamos el texto a la izquierda dentro del input */
 }
+
+/* Botón */
 button {
     background-color: #007bff;
     color: #ffffff;
@@ -83,26 +103,12 @@ button {
     padding: 10px 15px;
     border-radius: 4px;
     cursor: pointer;
-    width: 60%; /* Ajusta el ancho del botón */
-    margin: 20px auto; /* Centra el botón */
+    width: 60%;
+    margin: 20px auto;
     display: block;
 }
 
 button:hover {
-    background-color: #0056b3;
-}
-
-input[type="submit"] {
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    padding: 10px;
-    margin-top: 20px;
-}
-
-input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
@@ -132,8 +138,28 @@ tr:nth-child(odd) {
     background-color: #004f6d; /* Fila impar con fondo azul oscuro */
 }
 
-/* Mensajes de error */
-.error {
-    color: #e74c3c;
-    margin-bottom: 20px;
+/* Pie de página */
+footer {
+    background-color: #3C5B6F;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #f1b05b;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
