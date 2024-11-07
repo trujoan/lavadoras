@@ -2,10 +2,10 @@
 session_start(); // Iniciar la sesión
 
 // Conexión a la base de datos
-include 'conexiondb.php';
+include 'conexiondb.php'; // Incluir el archivo de conexión
 
 // Crear conexión
-$conn = new mysqli($host, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname); // Usar las variables del archivo conexiondb.php
 
 // Verificar conexión
 if ($conn->connect_error) {
@@ -80,56 +80,70 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modificar Usuarios - LavaFix</title>
-    <link rel="stylesheet" href="..\css\modificarUsuarios.css"> <!-- Incluir el CSS -->
+    <title>Modificar Usuario - LavaFix</title>
+    <link rel="stylesheet" href="..\css\modificarUsuario.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
 </head>
 <body>
-    <header>
-        <h1>Modificar Usuarios</h1>
-    </header>
 
-    <main>
+<header>
+    <nav class="navbar">
+        <h1>Modificar Usuario</h1>
+        <ul class="right-menu">
+            <li>
+                <!-- Enlace para logout, utilizando el ícono de Font Awesome -->
+                <a href="../super_admin.php" class="icon-logout">
+                    <i class="fas fa-sign-out-alt"></i> <!-- Ícono de logout -->
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <form method="post" action="">
+        <input type="text" name="searchTerm" placeholder="Buscar por username o correo" required>
+        <button type="submit">Buscar</button>
+    </form>
+
+    <?php if ($message): ?>
+        <p class="success-message"><?php echo htmlspecialchars($message); ?></p>
+    <?php endif; ?>
+
+    <?php if (!empty($usuarios)): ?>
+        <h2>Resultados de la búsqueda:</h2>
+        <ul>
+            <?php foreach ($usuarios as $usuario): ?>
+                <li>
+                    <strong>Username:</strong> <?php echo htmlspecialchars($usuario['username']); ?> <br>
+                    <strong>Email:</strong> <?php echo htmlspecialchars($usuario['email']); ?> <br>
+                    
+                    <!-- Botón de "Modificar" -->
+                    <form action="" method="get">
+                        <input type="hidden" name="id" value="<?php echo $usuario['user_id']; ?>">
+                        <button type="submit">Modificar</button>
+                    </form>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    <?php endif; ?>
+
+    <?php if ($user): ?>
+        <h2>Editar Usuario</h2>
         <form method="post" action="">
-            <input type="text" name="searchTerm" placeholder="Buscar por username o correo" required>
-            <button type="submit">Buscar</button>
+            <input type="text" name="first_name" placeholder="Primer Nombre" value="<?php echo htmlspecialchars($user['first_name']); ?>" required>
+            <input type="text" name="last_name" placeholder="Apellido" value="<?php echo htmlspecialchars($user['last_name']); ?>" required>
+            <input type="text" name="username" placeholder="Nombre de Usuario" value="<?php echo htmlspecialchars($user['username']); ?>" required>
+            <input type="email" name="email" placeholder="Correo Electrónico" value="<?php echo htmlspecialchars($user['email']); ?>" required>
+            <select name="role" required>
+                <option value="1" <?php if ($user['role'] == '1') echo 'selected'; ?>>Admin</option>
+                <option value="2" <?php if ($user['role'] == '2') echo 'selected'; ?>>Empleado</option>
+                <option value="3" <?php if ($user['role'] == '3') echo 'selected'; ?>>Cliente</option>
+            </select>
+            <button type="submit">Actualizar Usuario</button>
         </form>
+    <?php endif; ?>
+</main>
 
-        <?php if ($message): ?>
-            <p class="success-message"><?php echo htmlspecialchars($message); ?></p>
-        <?php endif; ?>
-
-        <?php if (!empty($usuarios)): ?>
-            <h2>Resultados de la búsqueda:</h2>
-            <ul>
-                <?php foreach ($usuarios as $usuario): ?>
-                    <li>
-                        <strong>Username:</strong> <?php echo htmlspecialchars($usuario['username']); ?> <br>
-                        <strong>Email:</strong> <?php echo htmlspecialchars($usuario['email']); ?> <br>
-                        <a href="?id=<?php echo $usuario['user_id']; ?>">Modificar</a>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
-        <?php endif; ?>
-
-        <?php if ($user): ?>
-            <h2>Editar Usuario</h2>
-            <form method="post" action="">
-                <input type="text" name="first_name" placeholder="Primer Nombre" value="<?php echo htmlspecialchars($user['first_name']); ?>" required>
-                <input type="text" name="last_name" placeholder="Apellido" value="<?php echo htmlspecialchars($user['last_name']); ?>" required>
-                <input type="text" name="username" placeholder="Nombre de Usuario" value="<?php echo htmlspecialchars($user['username']); ?>" required>
-                <input type="email" name="email" placeholder="Correo Electrónico" value="<?php echo htmlspecialchars($user['email']); ?>" required>
-                <select name="role" required>
-                    <option value="1" <?php if ($user['role'] == '1') echo 'selected'; ?>>Admin</option>
-                    <option value="2" <?php if ($user['role'] == '2') echo 'selected'; ?>>Empleado</option>
-                    <option value="3" <?php if ($user['role'] == '3') echo 'selected'; ?>>Cliente</option>
-                </select>
-                <button type="submit">Actualizar Usuario</button>
-            </form>
-        <?php endif; ?>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Tiendas de Electrodomésticos. Todos los derechos reservados.</p>
-    </footer>
 </body>
 </html>
