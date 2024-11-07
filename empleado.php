@@ -26,6 +26,9 @@ if (!isset($_SESSION["username"]) || $_SESSION["role"] != "2") {
     header("Location: login.html");
     exit();  // Detener la ejecución del script
 }
+
+// Obtener el nombre del usuario desde la sesión (asegurándote que "username" esté definido en la sesión)
+$username = isset($_SESSION["username"]) ? $_SESSION["username"] : "Usuario"; // Valor por defecto "Usuario" si no está disponible
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +44,8 @@ if (!isset($_SESSION["username"]) || $_SESSION["role"] != "2") {
 
 <body>
     <header>
-        <h1>Panel de Empleado</h1>
+        <!-- Aquí mostramos el mensaje de bienvenida con el nombre del usuario -->
+        <h1>Bienvenido, <?php echo htmlspecialchars($username); ?>!</h1>
         <nav>
             <ul>
                 <!-- Enlace para cerrar sesión con ícono -->

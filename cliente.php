@@ -26,6 +26,9 @@ if (!isset($_SESSION["username"]) || $_SESSION["role"] != "3") {
     header("Location: login.html");
     exit();  // Detener la ejecución del script
 }
+
+// Obtener el nombre del usuario desde la sesión
+$username = isset($_SESSION["username"]) ? $_SESSION["username"] : "Usuario";
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +44,7 @@ if (!isset($_SESSION["username"]) || $_SESSION["role"] != "3") {
 
 <body>
     <header>
-        <h1>Panel de Cliente</h1>
+            <h1>Bienvenido, <?php echo htmlspecialchars($username); ?>!</h1>
         <nav>
             <ul>
                 <!-- Enlace para cerrar sesión con ícono -->
@@ -56,7 +59,6 @@ if (!isset($_SESSION["username"]) || $_SESSION["role"] != "3") {
 
     <main>
         <div class="card-container">
-            
             <section id="modify-user" class="card">
                 <h2>Actualizar Usuario</h2>
                 <a href="php/modificarUsuario.php" class="btn">Actualizar Usuario</a>

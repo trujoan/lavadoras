@@ -26,7 +26,11 @@ if (!isset($_SESSION["username"]) || $_SESSION["role"] != "1") {
     header("Location: login.html");
     exit();  // Detener la ejecución del script
 }
+
+// Obtener el nombre del usuario desde la sesión (asegurándonos de que "username" esté definido)
+$username = isset($_SESSION["username"]) ? $_SESSION["username"] : "Super Admin"; // Valor por defecto "Super Admin"
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -38,7 +42,8 @@ if (!isset($_SESSION["username"]) || $_SESSION["role"] != "1") {
 </head>
 <body>
     <header>
-        <h1>Panel de Super Admin</h1>
+        <!-- Aquí mostramos el mensaje de bienvenida con el nombre del usuario -->
+        <h1>Bienvenido, <?php echo htmlspecialchars($username); ?>!</h1> <!-- Saludo personalizado -->
         <nav>
             <ul>
                 <li>
