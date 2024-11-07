@@ -63,7 +63,7 @@ if (!isset($_SESSION["username"]) || $_SESSION["role"] != "2") {
 
             <section id="verify-order" class="card">
                 <h2>Verificar Órden de Compra o Servicio</h2>
-                <a href="php/verificarOrden.php" class="btn">Verificar</a>
+                <a href="php/ordenesporCliente.php" class="btn">Verificar</a>
             </section>
 
             <section id="changes-log" class="card">

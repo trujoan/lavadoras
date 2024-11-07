@@ -58,7 +58,7 @@ $conn->close();
 </head>
 <header>
         <nav class="navbar">
-        <h1>Órdenes de Compra por Cliente</h1>
+        <h1>Órdenes de Ordenes de Compras - Servicios</h1>
             <ul class="right-menu">
                 <li>
                     <!-- Enlace para logout, utilizando el ícono de Font Awesome -->

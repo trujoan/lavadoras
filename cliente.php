@@ -58,8 +58,8 @@ if (!isset($_SESSION["username"]) || $_SESSION["role"] != "3") {
         <div class="card-container">
             
             <section id="modify-user" class="card">
-                <h2>Modificar Usuario</h2>
-                <a href="php/modificarUsuario.php" class="btn">Modificar Usuario</a>
+                <h2>Actualizar Usuario</h2>
+                <a href="php/modificarUsuario.php" class="btn">Actualizar Usuario</a>
             </section>
 
             <section id="order-management" class="card">

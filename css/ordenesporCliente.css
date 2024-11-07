@@ -132,7 +132,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    background-color: #082745; /* Fondo de tabla oscuro para coincidir con la paleta */
+    background-color: #005d7e; 
 }
 
 th, td {

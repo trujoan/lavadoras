@@ -1,3 +1,4 @@
+/* General */
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -25,6 +26,7 @@ nav li {
     margin: 0 10px;
 }
 
+/* Contenedor principal */
 main {
     flex: 1;
     display: flex;
@@ -32,6 +34,7 @@ main {
     padding: 20px;
 }
 
+/* Contenedor de tarjetas */
 .card-container {
     display: flex;
     flex-wrap: wrap; /* Permitir que las tarjetas se envuelvan */
@@ -40,22 +43,35 @@ main {
     width: 100%;
 }
 
+/* Estilo para las tarjetas */
 .card {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 10px; /* Espaciado entre tarjetas */
     background: #ffffff;
-    padding: 15px;
+    padding: 10px; /* Reducir padding para hacer las tarjetas más pequeñas */
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(5, 1, 1, 0.1);
-    flex: 1 1 300px; /* Creación de tarjetas flexibles con un tamaño mínimo */
+    flex: 1 1 280px; /* Tamaño mínimo de las tarjetas */
+    max-width: 300px; /* Limitar el tamaño máximo de las tarjetas */
+    height: 220px; /* Limitar la altura de las tarjetas */
+    box-sizing: border-box;
+    transition: transform 0.3s ease; /* Efecto para hover */
 }
 
+.card:hover {
+    transform: translateY(-5px); /* Efecto hover para las tarjetas */
+}
+
+/* Títulos dentro de las tarjetas */
 h2 {
     color: #0033a0;
+    font-size: 18px; /* Reducir el tamaño del título */
+    margin-bottom: 10px;
 }
 
+/* Formulario general */
 form {
     margin-bottom: 20px;
     width: 100%;
@@ -64,7 +80,8 @@ form {
     align-items: center;
 }
 
-input {
+/* Campos del formulario */
+input, select {
     padding: 10px;
     margin: 5px;
     width: calc(100% - 22px);
@@ -72,6 +89,7 @@ input {
     border-radius: 5px;
 }
 
+/* Botones */
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -101,11 +119,13 @@ button:hover {
     background-color: #0056b3;
 }
 
+/* Botón específico para modificar usuario */
 #modify-user-form button {
     margin: 5px 0;
     width: calc(50% - 10px); /* Ajusta el tamaño de los botones */
 }
 
+/* Estilo de las listas de usuarios y órdenes */
 #user-list ul, #orders ul {
     list-style: none;
     padding: 0;
@@ -115,6 +135,7 @@ button:hover {
     margin: 5px 0;
 }
 
+/* Footer */
 footer {
     background-color: #3C5B6F;
     color: #ffffff;
@@ -135,16 +156,19 @@ footer {
     transform: scale(1.1); /* Aumenta el tamaño del ícono al hacer hover */
 }
 
+/* Media Queries para dispositivos pequeños */
 @media (max-width: 768px) {
-    input {
-        width: calc(100% - 10px);
-    }
-
-    button {
-        width: 100%;
+    input, select, button {
+        width: calc(100% - 10px); /* Ajusta el tamaño de los campos en pantallas pequeñas */
     }
 
     .card {
         flex: 1 1 100%; /* Las tarjetas ocuparán todo el ancho en pantallas pequeñas */
+        max-width: none; /* Elimina el límite máximo de las tarjetas */
+        height: auto; /* Las tarjetas se ajustan automáticamente al contenido */
+    }
+
+    button {
+        width: 100%;
     }
 }
