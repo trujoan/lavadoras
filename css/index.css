@@ -223,14 +223,14 @@ footer p {
 
 .social-section {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center; /* Centra los íconos */
+    gap: 20px; /* Espaciado entre los íconos */
 }
 
 footer .social-icon {
-    font-size: 75px; /* Íconos más grandes */
+    font-size: 45px; /* Íconos más grandes */
     margin: 10px 0;
-    color: #ffffff;
+    color: #ffffff; /* Hacemos los íconos blancos */
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -238,29 +238,11 @@ footer .social-icon:hover {
     transform: scale(1.2); /* Agranda los íconos al pasar el ratón */
 }
 
-footer .whatsapp {
-    color: #25D366; /* Color verde de WhatsApp */
-}
-
-footer .facebook {
-    color: #1877F2; /* Color azul de Facebook */
-}
-
-footer .instagram {
-    color: #E4405F; /* Color rosa de Instagram */
-}
-footer .whatsapp,
-footer .facebook,
-footer .instagram {
-    color: #ffffff; /* Cambia el color de los íconos a blanco */
-}
-
-
 footer .location {
     font-size: 18px;
     margin-top: 15px;
     font-weight: bold;
-    text-align: center;
+    text-align: justify;
 }
 
 footer .map-container {
@@ -272,7 +254,7 @@ footer .map-container {
 footer iframe {
     border: 0;
     width: 100%; /* Hace que el mapa ocupe todo el ancho */
-    height: 300px; /* Altura del mapa */
+    height: 200px; /* Reducimos la altura del mapa */
     border-radius: 8px; /* Bordes redondeados del mapa */
 }
 
