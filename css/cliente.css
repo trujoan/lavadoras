@@ -69,6 +69,7 @@ h2 {
     color: #0033a0;
     font-size: 18px; /* Reducir el tamaño del título */
     margin-bottom: 10px;
+    text-align: center;
 }
 
 /* Formulario general */

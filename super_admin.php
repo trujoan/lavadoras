@@ -77,6 +77,10 @@ $username = isset($_SESSION["username"]) ? $_SESSION["username"] : "Super Admin"
                 <h2>Ver Órdenes de Compra de Clientes</h2>
                 <a href="php/ordenesporCliente.php" class="btn">Ver Órdenes de Compra</a>
             </section>
+            <section id="produccion" class="card">
+                <h2>Ver pendientes en Producción</h2>
+                <a href="pasarela.html" class="btn">Ver Pendientes</a>
+            </section>
         </div>
     </main>
 </body>
