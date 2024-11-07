@@ -82,7 +82,7 @@ $username = isset($_SESSION["username"]) ? $_SESSION["username"] : "Usuario"; //
 
             <section id="service-status" class="card">
                 <h2>Modificar Estado de Servicio</h2>
-                <a href="php/modificarEstadoServicio.php" class="btn">Modificar Estado</a>
+                <a href="php/ordenesporCliente.php" class="btn">Modificar Estado</a>
             </section>
         </div>
     </main>

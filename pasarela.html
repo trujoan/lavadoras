@@ -5,44 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pasarela de Pago - LavaFix_co</title>
     <link rel="stylesheet" href="css/pago.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Cargar la biblioteca de Stripe -->
+    <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="logout.html">Cerrar Sesión</a></li>
+    <header> 
+        <nav class="navbar">
+            <h1>Pagos</h1>
+            <ul class="right-menu">
+                <li>
+                    <!-- Enlace para logout, utilizando el ícono de Font Awesome -->
+                    <a href="../super_admin.php" class="icon-logout">
+                        <i class="fas fa-sign-out-alt"></i> <!-- Ícono de logout -->
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
 
     <main>
         <h2>Pasarela de Pago</h2>
-        <form id="payment-form">
+        <form id="payment-form" method="POST" action="procesar_pago.php">
             <div class="input-group">
                 <label for="card-number">Número de Tarjeta:</label>
-                <input type="text" id="card-number" required>
-            </div>
-            <div class="input-group">
-                <label for="card-expiration">Fecha de Expiración:</label>
-                <input type="text" id="card-expiration" placeholder="MM/AA" required>
-            </div>
-            <div class="input-group">
-                <label for="card-cvc">CVC:</label>
-                <input type="text" id="card-cvc" required>
+                <div id="card-element"></div> <!-- Elemento de tarjeta -->
             </div>
             <div class="input-group">
                 <label for="amount">Monto a Pagar:</label>
-                <input type="number" id="amount" required>
+                <input type="number" id="amount" name="amount" required>
             </div>
-            <button type="submit">Realizar Pago</button>
+            <button type="submit" id="submit-button">Realizar Pago</button>
             <p id="error-message"></p>
         </form>
     </main>
-
-    <footer>
-        <p>&copy; 2024 LavaFix_co. Todos los derechos reservados.</p>
-    </footer>
 
     <script src="js/pago.js"></script>
 </body>
